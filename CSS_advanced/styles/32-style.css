@@ -675,6 +675,9 @@ ul.row{
 .footer{
     color: var(--text-color);
 }
+.footer-address{
+  color: var(--text-color);
+}
 .social-link{
     display: block;
 }
