@@ -389,8 +389,10 @@
     --nav-item-link-hover: var(--color-primary);
     --section-tagline-margin: 0;
 }
-*{
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 html {
     scroll-behavior: smooth;
@@ -486,7 +488,7 @@ a:active{
 .nav .nav-link:hover{
     color: var(--nav-item-link-hover);
 }
-.row:after{
+.row::after{
     content: "";
     display: table;
     clear: both;

@@ -389,8 +389,10 @@
     --nav-item-link-hover: var(--color-primary);
     --section-tagline-margin: 0;
 }
-*{
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 html {
     scroll-behavior: smooth;
@@ -501,7 +503,7 @@ ul.row{
     float: left;
     padding: 0.5rem;
 }
-footer-copyright{
+.footer-copyright{
     margin: 0;
     font-size: var(--font-size-small);
     color: var(--text-color);

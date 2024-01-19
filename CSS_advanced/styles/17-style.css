@@ -381,8 +381,10 @@
     --section-footer-align: center;
     --footer-padding: 5rem 0 1rem;
 }
-*{
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 html {
     scroll-behavior: smooth;
