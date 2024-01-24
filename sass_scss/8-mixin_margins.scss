@@ -1,13 +1,10 @@
-@mixin margin{
-   margin-left: 10px;
+@mixin set-margins($left, $right){
+   margin-left: $left;
+   margin-right: $right;
 }
-@mixin margin2{
-    margin: 15px;
-}
-
 body{
-    @include margin;
+    @include set-margins(10px, 10px);
 }
 div{
-    @include margin2;
+    @include set-margins(15px, 15px);
 }
