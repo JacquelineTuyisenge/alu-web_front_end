@@ -1,0 +1,13 @@
+@mixin margin{
+   margin-left: 10px;
+}
+@mixin margin2{
+    margin: 15px;
+}
+
+body{
+    @include margin;
+}
+div{
+    @include margin2;
+}
