@@ -1,7 +1,6 @@
 body {
   color: #3D3D3D;
 }
-
-body > .red:first-child {
+body > .red {
   color: #FF0000;
 }/*# sourceMappingURL=5-nested_child.css.map */
