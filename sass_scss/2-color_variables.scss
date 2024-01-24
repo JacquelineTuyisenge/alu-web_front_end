@@ -4,4 +4,10 @@ $background: #6D6D6D;
 body{
     color: $textColor;
     background-color: $background;
+    p{
+        color: $textColor;
+    }
+    h2{
+        background-color: #6D6D6D;
+    }
 }
