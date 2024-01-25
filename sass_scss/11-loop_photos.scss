@@ -1,0 +1,8 @@
+@import "photo";
+$list-names: julien john sam damien;
+
+@each $name in $list-names{
+    .photo-#{$name}{
+        background: image-url("photo/#{$name}.jpg") no-repeat;
+    }
+}
