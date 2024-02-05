@@ -552,6 +552,10 @@
     background-size: 150rem 100rem;
     background-position: 50% 0;
   }
+  .hero-homepage {
+    background-position: 65% 8rem;
+    background-size: 90rem auto;
+  }
   
   .hero-article::before {
     content: '';
@@ -574,6 +578,9 @@
     position: relative;
     padding: 7rem 0 0;
     z-index: 2;
+  }
+  .section-hero .section-inner{
+    min-height: 35vh;
   }
   
   .main-article {

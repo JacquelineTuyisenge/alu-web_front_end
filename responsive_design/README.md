@@ -1,2 +1,2 @@
-readme file for this project
-FRONT-END
+readme file for this project: Responsive Design
+ADVANCED-FRONT-END
