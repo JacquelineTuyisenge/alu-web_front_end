@@ -9,58 +9,79 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
-        <!-- First line -->
-        <div class="p-2 text-white text-center col-lg">
-            <div class="bg-primary">Primary</div>
-            <div class="bg-success">Success</div>
-            <div class="bg-danger">Danger</div>
-            <div class="bg-warning">Warning</div>
+        <div class="row text-white text-center">
+            <div class="p-2 bg-primary col-lg">Primary</div>
+            <div class="p-2 bg-success col-lg">Success</div>
+            <div class="p-2 bg-danger col-lg">Danger</div>
+            <div class="p-2 bg-warning col-lg">Warning</div>
         </div>
 
         <hr />
 
-        <!-- Second line -->
-        <div class="p-2 text-white text-center col-sm">
-            <div class="bg-primary">Primary</div>
-            <div class="bg-success">Success</div>
-            <div class="bg-danger">Danger</div>
-            <div class="bg-warning">Warning</div>
+        <div class="row text-white text-center">
+            <div class="p-2 bg-primary  col-sm">Primary</div>
+            <div class="p-2 bg-success col-sm">Success</div>
+            <div class="p-2 bg-danger col-sm">Danger</div>
+            <div class="p-2 bg-warning col-sm">Warning</div>
         </div>
 
         <hr />
 
-        <!-- Third line -->
-        <div class="p-2 text-white text-center">
-            <div class="bg-primary col-lg-2">Primary</div>
-            <div class="bg-success col-lg-4">Success</div>
-            <div class="bg-danger col-lg-6">Danger</div>
+        <div class="row text-white text-center">
+            <div class="p-2 bg-primary col-lg-2">Primary</div>
+            <div class="p-2 bg-success col-lg-4">Success</div>
+            <div class="p-2 bg-danger col-lg-6">Danger</div>
         </div>
 
         <hr />
-
-        <!-- Fourth line -->
-        <div class="p-2 text-white text-center col-xl">
-            <div class="bg-primary">Primary</div>
-            <div class="bg-success">Success</div>
-            <div class="bg-danger">Danger</div>
-            <div class="bg-warning">Warning</div>
+        <div class="container">
+            <!--screen >= 1200px-->
+            <div class="row text-white text-center order-xl-1">
+                <div class="p-2 bg-primary col-xl">Primary</div>
+                <div class="p-2 bg-success col-xl">Success</div>
+                <div class="p-2 bg-danger col-xl">Danger</div>
+                <div class="p-2 bg-warning col-xl">Warning</div>
+            </div>
+            <!--992px < screen < 1200px-->
+            <div class="row text-white text-center order-md-2">
+                <div class="col-md p-2 text-white text-center bg-warning"> Warning</div>
+                <div class="col-md p-2 text-white text-center bg-primary"> Primary</div>
+                <div class="col-md p-2 text-white text-center bg-success"> Success</div>
+                <div class="col-md p-2 text-white text-center bg-danger"> Danger</div>
+            </div>
+            <!--768px < screen < 992px-->
+            <div class="row text-white text-center order-sm-3">
+                <div class="col-sm p-2 text-white text-center bg-danger"> Danger</div>
+                <div class="col-sm p-2 text-white text-center bg-warning"> Warning</div>
+                <div class="col-sm p-2 text-white text-center bg-primary"> Primary</div>
+                <div class="col-sm p-2 text-white text-center bg-success"> Success</div>
+            </div>
+            <!--screen < 768px-->
+            <div class="row text-white text-center">
+                <div class="col p-2 text-white text-center bg-success order-xs-4"> Success</div>
+                <div class="col p-2 text-white text-center bg-danger"> Danger</div>
+                <div class="col p-2 text-white text-center bg-warning"> Warning</div>
+                <div class="col p-2 text-white text-center bg-primary"> Primary</div>
+            </div>
         </div>
 
         <hr/>
 
-        <!-- Fifth line -->
-        <div class="p-2 text-white text-center">
-            <div class="bg-primary col-md-6 col-lg-3">Primary</div>
-            <div class="bg-success col-md-6 col-lg-3">Success</div>
+        <div class="row text-white text-center">
+            <div class="p-2 bg-primary col-md-2">Primary</div>
+            <div class="p-2 bg-success col-md-2 offset-md-8">Success</div>
         </div>
-
+        <!-- Fifth line: Screen < 768px -->
+        <div class="row text-white text-center">
+            <div class="p-2 bg-primary col-6">Primary</div>
+            <div class="p-2 bg-success col-6">Success</div>
+        </div>
         <hr/>
 
-        <!-- Last line -->
-        <div class="p-2 text-white text-center">
-            <div class="bg-primary col-md-4">Primary</div>
-            <div class="bg-success col-md-4 col-lg-2">Success</div>
-            <div class="bg-danger col-md-4">Danger</div>
+        <div class="row text-white text-center">
+            <div class="p-2 bg-primary col-md-2">Primary</div>
+            <div class="p-2 bg-success col-md-2">Success</div>
+            <div class="p-2 bg-danger col-md-2">Danger</div>
         </div>
     </body>
 </html>
