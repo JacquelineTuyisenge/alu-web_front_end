@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 12</title>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script type="application/javascript">
+      const addPostRow = (data) => {
+        const { id, title, author } = data
+        $("body").append(
+          `<p id="row-${id}">` +
+            "<span class='delete'>(delete)" +
+            "</span>" +
+            "<span>" +
+            `Post created with id ${id}, title: ${title}, author: ${author}`
+        )
+        $(`#row-${id} .delete`).click(function () {
+          deletePost(id)
+        })
+      }
+      const deletePost = (id) => {
+        $.ajax({
+          type: "DELETE",
+          url: `http://localhost:3000/posts/${id}`,
+          success: () => {
+            $(`#${id}`).parent("p").remove()
+          },
+        }).fail(() => console.log("Post was not deleted"))
+        $(this).parent("p").remove()
+      }
+      const listPosts = () => {
+        $.get("http://localhost:3000/posts", (data) => {
+          data.forEach((e) => addPostRow(e))
+        }).fail(() => {
+          console.log("Server Error")
+        })
+      }
+      const buildForm = () => {
+        $("body").append(
+          "<form>" +
+            "<div>" +
+            "<label>Author</label>" +
+            "<input type='text' id='author'>" +
+            "</div>" +
+            "<div>" +
+            "<label>Title</label>" +
+            "<input type='text' id='title'>" +
+            "</div>" +
+            "<input type='submit' id='submit'>"
+        )
+        $("#submit").click(function (event) {
+          event.preventDefault()
+          sendForm()
+        })
+      }
+      const sendForm = () => {
+        $("form").after("<p>About to send the query to the API")
+        const data = {
+          title: $("#title").val(),
+          author: $("#author").val(),
+        }
+        $.ajax({
+          type: "POST",
+          data: data,
+          url: "http://localhost:3000/posts",
+          success: (res) => addPostRow(res),
+        }).fail(() => console.log("Error sending the POST query"))
+      }
+      buildForm()
+      $("input").keypress(function (event) {
+        if (event.which == 13) {
+          event.preventDefault()
+          $("#submit").click()
+        }
+      })
+      listPosts()
+    </script>
+  </body>
+</html>
