@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagination Example</title>
+<style>
+
+    /* Add your CSS styles here */
+    body{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #150101;
+        color: antiquewhite;
+    }
+    h1{
+        text-align: center;
+    }
+    #pagination{
+        text-align: center;
+        margin: 20px;
+    }
+    #pagination a{
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 10px;
+        border: 1px solid #d73030;
+        margin: 0 5px;
+    }
+    #pagination a:hover{
+        background-color: #320101;
+    }
+    #content{
+        text-align: center;
+        margin: 20px;
+        color: #fff;
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-family: 'Courier New', Courier, monospace;
+        text-shadow: 4px 4px 10px rgba(190, 230, 174, 0.5);
+    }
+    #content ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+</style>
+</head>
+<body>
+    <h1>Pagination Example</h1>
+
+<div id="content">
+    <!-- Content to be paginated -->
+    <ul>
+        <li>water</li>
+        <li>fire</li>
+        <li>bread</li>
+        <li>meat</li>
+        <li>cheese</li>
+        <li>fries</li>
+        <li>mathematics</li>
+        <li>science</li>
+        <li>history</li>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <!-- Add more items as needed -->
+    </ul>
+</div>
+
+<div id="pagination">
+    <!-- Pagination controls will be added here -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    var itemsPerPage = 3; // Number of items to display per page
+
+    var $content = $('#content ul');
+    var $pagination = $('#pagination');
+
+    var totalPages = Math.ceil($content.children().length / itemsPerPage);
+
+    // Initial pagination setup
+    for (var i = 1; i <= totalPages; i++) {
+        $('<a href="#">' + i + '</a>').appendTo($pagination);
+    }
+
+    // Show the first page by default
+    $content.children().slice(itemsPerPage).hide();
+
+    // Pagination click event
+    $pagination.on('click', 'a', function(e) {
+        e.preventDefault();
+
+        var currentPage = $(this).text();
+        var start = (currentPage - 1) * itemsPerPage;
+        var end = start + itemsPerPage;
+
+        $content.children().hide().slice(start, end).show();
+    });
+});
+</script>
+
+</body>
+</html>

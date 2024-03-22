@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 4</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <script type="application/javascript">
+            
+                $.fn.createFamilyTree = function() {
+
+                   var table = $('<table>').attr('id', 'myTable');
+
+                   var thead = $('<thead>').appendTo(table);
+                    var headerRow = $('<tr>').appendTo(thead);
+                    $('<th>').text('Firstname').appendTo(headerRow);
+                    $('<th>').text('Lastname').appendTo(headerRow);
+
+                    var tbody = $('<tbody>').appendTo(table);
+                    
+                    $('<tr>').append(
+                        $('<td>').text('Guillaume'),
+                        $('<td>').text('Salva')
+                    ).appendTo(tbody);
+
+                    $('<tr>').append(
+                        $('<td>').text('Paulette'),
+                        $('<td>').text('Salva')
+                    ).appendTo(tbody);
+                        
+                    $('<tr>').append(
+                        $('<td>').text('Antoine'),
+                        $('<td>').text('Salva')
+                    ).appendTo(tbody);
+    
+                    $(table).appendTo('body');
+                };
+
+                $.fn.replaceFamilyTree = function() {
+                    var newRows = $('<tr>').append(
+                        $('<td>').html('Gerard'),
+                        $('<td>').html('Bonissa')
+                    );
+                    $('#myTable tbody').html(newRows);
+                };
+
+                
+                $(document).ready(function() {
+                    $.fn.createFamilyTree();
+                    $.fn.replaceFamilyTree();
+            });
+        </script>
+    </body>
+
+</html>
